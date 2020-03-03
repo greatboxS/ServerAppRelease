@@ -22,7 +22,7 @@ namespace AutoTune
         Data_Services data_Services;
         CheckingPerson CheckingPerson;
         Timer Timer = new Timer { Enabled = true, Interval = 1000 * 10 };
-        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 };
+        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 * 60 * 1 };
         int WaitingTime = 0;
 
         bool StartCheck = false;
@@ -66,7 +66,7 @@ namespace AutoTune
                 return;
             Random random = new Random();
 
-            if (WaitingTime >= random.Next(4, 10))
+            if (WaitingTime >= random.Next(4, 15))
             {
                 WaitingTime = 0;
                 AutoCheck_Queue.Submit_Next();
