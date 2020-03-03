@@ -1,0 +1,15 @@
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EF_CONFIG.dll.config
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EF_CONFIG.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EF_CONFIG.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EntityFramework.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EntityFramework.SqlServer.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\Newtonsoft.Json.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EntityFramework.xml
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EntityFramework.SqlServer.xml
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\Newtonsoft.Json.xml
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Release\EF_CONFIG.csprojAssemblyReference.cache
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Release\EF_CONFIG.csproj.CopyComplete
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Release\EF_CONFIG.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Release\EF_CONFIG.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EPPlus.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Release\EPPlus.xml
