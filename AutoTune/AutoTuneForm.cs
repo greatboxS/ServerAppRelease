@@ -22,7 +22,7 @@ namespace AutoTune
         Data_Services data_Services;
         CheckingPerson CheckingPerson;
         Timer Timer = new Timer { Enabled = true, Interval = 1000 * 10 };
-        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 * 60 * 1 };
+        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 };
         int WaitingTime = 0;
 
         bool StartCheck = false;

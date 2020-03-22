@@ -11,7 +11,7 @@ namespace EF_CONFIG.Data
     {
         public static bool Begin()
         {
-            using (var DataContext = new DataContext(Server.DefaultConnectionString))
+            using (var DataContext = new DataContext())
             {
                 if (DataContext != null)
                 {

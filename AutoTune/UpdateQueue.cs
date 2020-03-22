@@ -140,9 +140,9 @@ namespace AutoTune
                     });
                 }
 
-                var request = (HttpWebRequest)WebRequest.Create("http://10.10.10.3:32760/echecklist/post");
+                //var request = (HttpWebRequest)WebRequest.Create("http://10.10.10.3:32760/echecklist/post");
                 //var request = (HttpWebRequest)WebRequest.Create("http://10.4.3.41:32760/echecklist/post");
-                //var request = (HttpWebRequest)WebRequest.Create("http://localhost:32760/echecklist/post");
+                var request = (HttpWebRequest)WebRequest.Create("http://localhost:32760/echecklist/post");
                 var data = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eCheckSubmit));
 
                 request.Method = "POST";

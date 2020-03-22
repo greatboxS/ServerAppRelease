@@ -114,10 +114,6 @@
       <Project>{a5aed281-89d7-4528-bec8-ddb429c883a0}</Project>
       <Name>EF_CONFIG</Name>
     </ProjectReference>
-    <ProjectReference Include="..\EServer\EServer.csproj">
-      <Project>{42b7cc89-152a-4832-91ce-6619a00150a4}</Project>
-      <Name>EServer</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ExportToExcel\ExportToExcel.csproj">
       <Project>{60ccd4fc-151d-46a8-b90c-311de978a687}</Project>
       <Name>ExportToExcel</Name>

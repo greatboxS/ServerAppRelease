@@ -30,9 +30,9 @@ namespace ServerApp.Controllers
 
         [HttpGet]
         [Route("area/{id}")]
-        public IHttpActionResult Get_AreaData(int Area_Id)
+        public IHttpActionResult Get_AreaData(int id)
         {
-            return Json(Data_Services.Get_ECheckDaily(Area_Id));
+            return Json(Data_Services.Get_ECheckDaily(id));
         }
 
         [HttpGet]

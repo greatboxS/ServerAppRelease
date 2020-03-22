@@ -52,10 +52,23 @@ namespace EF_CONFIG.Exports
 
                 string FullFileName = $"{current_month_folder}\\{fileName}";
 
-                if (!files.Contains(FullFileName))
+
+                if(!files.Contains(FullFileName))
                 {
                     Create_ExcelFile(FullFileName, date);
                 }
+                //bool exsited = false;
+                //foreach (var item in files)
+                //{
+                //    if (item.IndexOf(fileName) > -1)
+                //    {
+                //        exsited = true;
+                //        break;
+                //    }
+                //}
+
+                //if (!exsited)
+                //    Create_ExcelFile(FullFileName, date);
 
                 return FullFileName;
             }
@@ -98,6 +111,18 @@ namespace EF_CONFIG.Exports
                 {
                     Create_ExcelFile(FullFileName, DateTime.Now);
                 }
+                //bool exsited = false;
+                //foreach (var item in files)
+                //{
+                //    if (item.IndexOf(fileName) > -1)
+                //    {
+                //        exsited = true;
+                //        break;
+                //    }
+                //}
+
+                //if (!exsited)
+                //    Create_ExcelFile(FullFileName, date);
 
                 return FullFileName;
             }
@@ -465,6 +490,7 @@ namespace EF_CONFIG.Exports
                 var submits = Data_Services.GetSubmitOnDate(Date, area);
                 string areaNotes = string.Empty;
 
+                update_log += $"submit in area {area} size {submits.Count}";
                 foreach (var item in submits)
                 {
                     bool excp = UpdateToExcel(item, excelPackage, ref areaNotes);
@@ -613,7 +639,7 @@ namespace EF_CONFIG.Exports
             {
                 var areas = Data_Services.Get_ECheckAreas();
                 if (areas == null)
-                    return null;
+                    return "Area list is null";
 
                 string FilePath = Create_ExcelFile(Date);
 
@@ -621,6 +647,7 @@ namespace EF_CONFIG.Exports
 
                 using (ExcelPackage excelPackage = new ExcelPackage(CurrentExcel))
                 {
+                    ExportLog += $"area size {areas.Count}";
                     foreach (var area in areas)
                     {
 
@@ -636,7 +663,7 @@ namespace EF_CONFIG.Exports
             catch (Exception ex)
             {
 
-                return null;
+                return ex.ToString();
             }
         }
     }

@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using EF_CONFIG.Data;
 using EF_CONFIG.Exports;
 using EF_CONFIG.Models;
-using EServer.Services;
 using Newtonsoft.Json;
 
 namespace AutoTune
@@ -21,13 +20,37 @@ namespace AutoTune
         private Data_Services Data_Services;
         private ServerExport ServerExport;
         private AutoTuneForm autoTuneForm;
+        private Timer AutoUpdateExcelTimer = new Timer { Enabled = true, Interval = 1000 * 30 };//20s timer
+        string lastUpdateTime = string.Empty;
         public Form1()
         {
             InitializeComponent();
             DataContext = new DataContext();
             Data_Services = new Data_Services(DataContext);
             ServerExport = new ServerExport(DataContext);
+
+            DataBaseInitialize.Begin();
+
             autoTuneForm = new AutoTuneForm();
+
+            AutoUpdateExcelTimer.Tick += AutoUpdateExcelTimer_Tick;
+            AutoUpdateExcelTimer.Start();
+        }
+
+        private void AutoUpdateExcelTimer_Tick(object sender, EventArgs e)
+        {
+            AutoUpdateExcelTimer.Stop();
+            var last_submit = Data_Services.GetLastSumbit();
+            if (last_submit != null)
+            {
+                if (last_submit.UpdateTime != lastUpdateTime)
+                {
+                    lastUpdateTime = last_submit.UpdateTime;
+                    ServerExport.ExportToExcel(DateTime.Now);
+                    lbLastUpdate.Text = lastUpdateTime;
+                }
+            }
+            AutoUpdateExcelTimer.Start();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,6 +74,7 @@ namespace AutoTune
         private void btnOpenExcelFile_Click(object sender, EventArgs e)
         {
             string log = ServerExport.ExportToExcel(dateTimePicker1.Value);
+            //MessageBox.Show(log);
             System.Diagnostics.Process.Start(ServerExport.Create_ExcelFile(dateTimePicker1.Value));
         }
 

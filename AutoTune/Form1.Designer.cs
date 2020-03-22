@@ -34,6 +34,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.createDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createDatabaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lbLastUpdate = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -86,15 +87,24 @@
             // createDatabaseToolStripMenuItem1
             // 
             this.createDatabaseToolStripMenuItem1.Name = "createDatabaseToolStripMenuItem1";
-            this.createDatabaseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.createDatabaseToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
             this.createDatabaseToolStripMenuItem1.Text = "Create database";
             this.createDatabaseToolStripMenuItem1.Click += new System.EventHandler(this.createDatabaseToolStripMenuItem1_Click);
+            // 
+            // lbLastUpdate
+            // 
+            this.lbLastUpdate.Location = new System.Drawing.Point(0, 106);
+            this.lbLastUpdate.Name = "lbLastUpdate";
+            this.lbLastUpdate.Size = new System.Drawing.Size(306, 21);
+            this.lbLastUpdate.TabIndex = 5;
+            this.lbLastUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(306, 141);
+            this.Controls.Add(this.lbLastUpdate);
             this.Controls.Add(this.SecretBtn);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.btnOpenExcelFile);
@@ -117,6 +127,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem createDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createDatabaseToolStripMenuItem1;
+        private System.Windows.Forms.Label lbLastUpdate;
     }
 }
 

@@ -130,11 +130,31 @@ namespace EF_CONFIG.Models
         {
             try
             {
-                string date = submitDate.ToString("hh:mm tt, dd/MM/yy");
-                return DataContext.ESubmit
+                var submits = DataContext.ESubmit
                     .Include("ECheckingDailys")
-                    .Where(i => i.AreaId == (int)area_id && i.UpdateTime == date)
+                    .Where(i => i.AreaId == (int)area_id)
                     .ToList();
+                var result = new List<ESubmit>();
+                foreach (var item in submits)
+                {
+                    if(item.Date.Day == submitDate.Day 
+                        && item.Date.Month == submitDate.Month
+                        && item.Date.Year == submitDate.Year)
+                    {
+                        result.Add(item);
+                    }
+                }
+
+                return result;
+            }
+            catch { return null; }
+        }
+
+        public ESubmit GetLastSumbit()
+        {
+            try
+            {
+                return DataContext.ESubmit.OrderByDescending(i => i.Id).FirstOrDefault();
             }
             catch { return null; }
         }
