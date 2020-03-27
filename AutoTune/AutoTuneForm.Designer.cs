@@ -45,6 +45,9 @@
             this.button1 = new System.Windows.Forms.Button();
             this.lb_Finish = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.txtUrl = new System.Windows.Forms.TextBox();
+            this.btnSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DS_PERSON)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.QueueData)).BeginInit();
             this.SuspendLayout();
@@ -155,7 +158,7 @@
             this.QueueData.Name = "QueueData";
             this.QueueData.RowHeadersWidth = 10;
             this.QueueData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.QueueData.Size = new System.Drawing.Size(316, 341);
+            this.QueueData.Size = new System.Drawing.Size(316, 301);
             this.QueueData.TabIndex = 7;
             // 
             // label3
@@ -170,7 +173,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 195);
+            this.label4.Location = new System.Drawing.Point(12, 217);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 10;
@@ -180,7 +183,7 @@
             // 
             this.cbxHis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxHis.FormattingEnabled = true;
-            this.cbxHis.Location = new System.Drawing.Point(15, 210);
+            this.cbxHis.Location = new System.Drawing.Point(15, 232);
             this.cbxHis.Name = "cbxHis";
             this.cbxHis.Size = new System.Drawing.Size(181, 21);
             this.cbxHis.TabIndex = 9;
@@ -188,7 +191,7 @@
             // 
             // btnOpenHis
             // 
-            this.btnOpenHis.Location = new System.Drawing.Point(86, 237);
+            this.btnOpenHis.Location = new System.Drawing.Point(86, 259);
             this.btnOpenHis.Name = "btnOpenHis";
             this.btnOpenHis.Size = new System.Drawing.Size(110, 22);
             this.btnOpenHis.TabIndex = 11;
@@ -222,11 +225,39 @@
             this.lbStatus.TabIndex = 14;
             this.lbStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip1.Size = new System.Drawing.Size(523, 24);
+            this.menuStrip1.TabIndex = 15;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // txtUrl
+            // 
+            this.txtUrl.Location = new System.Drawing.Point(202, 339);
+            this.txtUrl.Name = "txtUrl";
+            this.txtUrl.Size = new System.Drawing.Size(253, 20);
+            this.txtUrl.TabIndex = 16;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(461, 337);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(57, 23);
+            this.btnSave.TabIndex = 17;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // AutoTuneForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(523, 371);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.txtUrl);
             this.Controls.Add(this.lbStatus);
             this.Controls.Add(this.lb_Finish);
             this.Controls.Add(this.button1);
@@ -242,11 +273,14 @@
             this.Controls.Add(this.cbxHour);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbxPerson);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximumSize = new System.Drawing.Size(539, 410);
             this.MinimumSize = new System.Drawing.Size(539, 410);
             this.Name = "AutoTuneForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AutoTuneForm_FormClosing);
+            this.Load += new System.EventHandler(this.AutoTuneForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DS_PERSON)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.QueueData)).EndInit();
             this.ResumeLayout(false);
@@ -272,5 +306,8 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lb_Finish;
         private System.Windows.Forms.Label lbStatus;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.TextBox txtUrl;
+        private System.Windows.Forms.Button btnSave;
     }
 }

@@ -47,21 +47,20 @@ namespace EF_CONFIG.Data
             }
         }
 
-        private static void AddNewCheckNotes( DataContext DataContext)
+        private static void AddNewCheckNotes(DataContext DataContext)
         {
-            DataContext.ECheckNotes.AddRange( new ECheckNotes[]
+            for (int area_id = 1; area_id <= ECheckingItem.ECheckAreaArray.Length; area_id++)
             {
-                new ECheckNotes{ NoteName="1" },
-                new ECheckNotes{ NoteName="2" },
-                new ECheckNotes{ NoteName="3" },
-                new ECheckNotes{ NoteName="4" },
-                new ECheckNotes{ NoteName="5" },
-                new ECheckNotes{ NoteName="6" },
-                new ECheckNotes{ NoteName="7" },
-                new ECheckNotes{ NoteName="8" },
-                new ECheckNotes{ NoteName="9" },
-                new ECheckNotes{ NoteName="9" },
-            });
+                for (int note_id = 1; note_id <= 20; note_id++)
+                {
+                    DataContext.ECheckNotes.Add(new ECheckNotes {
+                        NoteId = note_id, 
+                        AreaId = area_id, 
+                        AreaName = ECheckingItem.ECheckAreaArray[area_id-1].ToString(),
+                        NoteName = $"Area{area_id}: Note{note_id}" 
+                    });
+                }
+            }
             DataContext.SaveChanges();
         }
 

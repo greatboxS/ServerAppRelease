@@ -31,6 +31,7 @@ E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\Antlr3.Runtime.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EF_CONFIG.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EntityFramework.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EntityFramework.SqlServer.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EPPlus.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\ExportToExcel.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\Microsoft.Web.Infrastructure.dll
@@ -46,13 +47,13 @@ E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Web.WebPages.De
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Web.WebPages.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Web.WebPages.Razor.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\WebGrease.dll
-E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EPPlus.dll
-E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EF_CONFIG.pdb
-E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EF_CONFIG.dll.config
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\ExportToExcel.pdb
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\ExportToExcel.dll.config
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EF_CONFIG.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EF_CONFIG.dll.config
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EntityFramework.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EntityFramework.SqlServer.xml
+E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EPPlus.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\Newtonsoft.Json.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Net.Http.Formatting.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Web.Helpers.xml
@@ -66,7 +67,6 @@ E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Web.WebPages.De
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\System.Web.WebPages.Razor.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\Antlr3.Runtime.pdb
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\bin\EPPlus.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\obj\Release\EServer.csprojAssemblyReference.cache
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\obj\Release\EServer.csproj.CopyComplete
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EServer\obj\Release\EServer.dll

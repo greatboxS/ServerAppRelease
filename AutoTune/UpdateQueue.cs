@@ -41,8 +41,23 @@ namespace AutoTune
             updateIndex = 0;
 
             CheckAreas = Data_Services.Get_ECheckAreas();
-            shufArr = CheckAreas.Select(i => i.AreaCode).ToArray();
-            shufArr = shufArr.OrderBy(n => Guid.NewGuid()).ToArray();
+
+            List<int> temp_arr = new List<int>();
+
+            temp_arr.AddRange(new int[] { 1, 2, 3 });
+
+            int[] suf_arr = CheckAreas.Where(i => i.id > 3).Select(i => i.AreaCode).ToArray();
+
+            suf_arr = suf_arr.OrderBy(n => Guid.NewGuid()).ToArray();
+
+            temp_arr.AddRange(suf_arr);
+
+            shufArr = temp_arr.ToArray();
+        }
+
+        public int Get_CurrentArea_Id()
+        {
+            return updateIndex;
         }
 
         public ECheckArea Get_NextArea()
@@ -79,6 +94,7 @@ namespace AutoTune
         {
             AutoList.Add(new AutoCheck_Handle(person, hour, min));
         }
+
         public void Get_HandleToPost(DateTime Time)
         {
             if (!IsPosting)
@@ -92,6 +108,15 @@ namespace AutoTune
                     IsPosting = true;
                 }
             }
+        }
+
+        public int GetCurrentArea_Id()
+        {
+            if (CurrentCheck != null)
+            {
+                return CurrentCheck.Get_CurrentArea_Id();
+            }
+            else return -1;
         }
 
         public void Submit_Next()
@@ -140,9 +165,11 @@ namespace AutoTune
                     });
                 }
 
-                //var request = (HttpWebRequest)WebRequest.Create("http://10.10.10.3:32760/echecklist/post");
+                string url = Properties.Settings.Default.Url;
+
+                //var request = (HttpWebRequest)WebRequest.Create("http://10.10.10.2:32760/echecklist/post");
                 //var request = (HttpWebRequest)WebRequest.Create("http://10.4.3.41:32760/echecklist/post");
-                var request = (HttpWebRequest)WebRequest.Create("http://localhost:32760/echecklist/post");
+                var request = (HttpWebRequest)WebRequest.Create(url);
                 var data = Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eCheckSubmit));
 
                 request.Method = "POST";

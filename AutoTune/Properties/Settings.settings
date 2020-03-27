@@ -5,5 +5,8 @@
     <Setting Name="His" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="Url" Type="System.String" Scope="User">
+      <Value Profile="(Default)">http://10.10.10.3:32760/echecklist/post</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

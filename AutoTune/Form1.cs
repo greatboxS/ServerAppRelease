@@ -25,13 +25,14 @@ namespace AutoTune
         public Form1()
         {
             InitializeComponent();
-            DataContext = new DataContext();
-            Data_Services = new Data_Services(DataContext);
-            ServerExport = new ServerExport(DataContext);
 
             DataBaseInitialize.Begin();
 
             autoTuneForm = new AutoTuneForm();
+
+            DataContext = new DataContext();
+            Data_Services = new Data_Services(DataContext);
+            ServerExport = new ServerExport(DataContext);
 
             AutoUpdateExcelTimer.Tick += AutoUpdateExcelTimer_Tick;
             AutoUpdateExcelTimer.Start();

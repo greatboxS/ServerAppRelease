@@ -12,4 +12,3 @@ E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\bin\Debug\Newtonsoft.Jso
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Debug\EF_CONFIG.csproj.CopyComplete
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Debug\EF_CONFIG.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Debug\EF_CONFIG.pdb
-E:\Visual Code\ECheckList_ServerApp\ServerApp\EF_CONFIG\obj\Debug\EF_CONFIG.csprojAssemblyReference.cache

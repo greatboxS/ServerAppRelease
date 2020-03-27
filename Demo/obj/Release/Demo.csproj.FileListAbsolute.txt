@@ -1,0 +1,16 @@
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\Demo.exe.config
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\Demo.exe
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\Demo.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\EF_CONFIG.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\Newtonsoft.Json.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\EntityFramework.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\EF_CONFIG.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\EF_CONFIG.dll.config
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\Newtonsoft.Json.xml
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\bin\Release\EntityFramework.xml
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\obj\Release\Demo.csprojAssemblyReference.cache
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\obj\Release\Demo.Properties.Resources.resources
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\obj\Release\Demo.csproj.GenerateResource.cache
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\obj\Release\Demo.csproj.CopyComplete
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\obj\Release\Demo.exe
+E:\Visual Code\ECheckList_ServerApp\ServerApp\Demo\obj\Release\Demo.pdb

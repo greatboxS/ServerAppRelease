@@ -1,10 +1,13 @@
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\ExportToExcel.dll.config
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\ExportToExcel.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\ExportToExcel.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EF_CONFIG.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EntityFramework.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EntityFramework.SqlServer.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EPPlus.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\Newtonsoft.Json.dll
+E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EF_CONFIG.pdb
+E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EF_CONFIG.dll.config
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EntityFramework.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EntityFramework.SqlServer.xml
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EPPlus.xml
@@ -13,6 +16,3 @@ E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\obj\Release\ExportTo
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\obj\Release\ExportToExcel.csproj.CopyComplete
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\obj\Release\ExportToExcel.dll
 E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\obj\Release\ExportToExcel.pdb
-E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EF_CONFIG.dll
-E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EF_CONFIG.pdb
-E:\Visual Code\ECheckList_ServerApp\ServerApp\ExportToExcel\bin\Release\EF_CONFIG.dll.config

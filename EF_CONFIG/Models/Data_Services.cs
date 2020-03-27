@@ -158,5 +158,14 @@ namespace EF_CONFIG.Models
             }
             catch { return null; }
         }
+
+        public ECheckNotes GetEcheckNote(int area_id, int note_id)
+        {
+            try
+            {
+                return DataContext.ECheckNotes.Where(i => i.AreaId == area_id && i.NoteId == note_id).FirstOrDefault();
+            }
+            catch { return null; }
+        }
     }
 }

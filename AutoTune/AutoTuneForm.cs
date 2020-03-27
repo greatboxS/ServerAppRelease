@@ -22,9 +22,10 @@ namespace AutoTune
         Data_Services data_Services;
         CheckingPerson CheckingPerson;
         Timer Timer = new Timer { Enabled = true, Interval = 1000 * 10 };
-        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 };
+        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 * 60 };
         int WaitingTime = 0;
-
+        int MaxWaitingTime = 10;
+        int MinWaitingTime = 5;
         bool StartCheck = false;
 
         private AutoCheck_Handle AutoCheck_Handle = new AutoCheck_Handle();
@@ -44,10 +45,10 @@ namespace AutoTune
             Timer.Tick += Timer_Tick;
             PostTimer.Tick += PostTimer_Tick;
 
-            DS_PERSON.DataSource = data_Services.Get_CheckPersons();
-
             try
             {
+                DS_PERSON.DataSource = data_Services.Get_CheckPersons();
+
                 string json = Properties.Settings.Default.His;
                 var his = JsonConvert.DeserializeObject<List<AutoCheck_Queue>>(json);
                 His = his;
@@ -65,25 +66,50 @@ namespace AutoTune
             if (!StartCheck)
                 return;
             Random random = new Random();
+            int currentIndex = AutoCheck_Queue.GetCurrentArea_Id();
+            int finish = 0;
 
-            if (WaitingTime >= random.Next(4, 15))
+
+            if (currentIndex == 0)
             {
                 WaitingTime = 0;
                 AutoCheck_Queue.Submit_Next();
                 Update_DataGridView();
-
-                int finish = AutoCheck_Queue.Get_Finish();
-
-                lb_Finish.Text = $"{AutoCheck_Queue.Get_Finish()}/{AutoCheck_Queue.AutoList.Count}";
-
-                if (AutoCheck_Queue.IsFinished())
+            }
+            else if (currentIndex <= 3)
+            {
+                if (WaitingTime >= random.Next(2, 3))
                 {
-                    lbStatus.Text = "Tiến trình hoàn thành";
-                    AutoCheck_Queue.AutoList.Clear();
-                    Timer.Stop();
-                    PostTimer.Stop();
+                    WaitingTime = 0;
+                    AutoCheck_Queue.Submit_Next();
+                    Update_DataGridView();
                 }
             }
+            
+            if (currentIndex >= 4)
+            {
+                if (WaitingTime >= random.Next(3, 5))
+                {
+                    WaitingTime = 0;
+                    AutoCheck_Queue.Submit_Next();
+                    Update_DataGridView();
+                }
+            }
+
+            finish = AutoCheck_Queue.Get_Finish();
+
+            lb_Finish.Text = $"{AutoCheck_Queue.Get_Finish()}/{AutoCheck_Queue.AutoList.Count}";
+
+            if (AutoCheck_Queue.IsFinished())
+            {
+                lbStatus.Text = "Tiến trình hoàn thành";
+                AutoCheck_Queue.AutoList.Clear();
+                Timer.Stop();
+                PostTimer.Stop();
+                button1.Text = "Bắt đầu check tự động";
+                StartCheck = false;
+            }
+
             WaitingTime++;
         }
 
@@ -228,7 +254,7 @@ namespace AutoTune
             catch { }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        void ButStartCallback()
         {
             StartCheck = !StartCheck;
 
@@ -269,11 +295,32 @@ namespace AutoTune
                 button1.Text = "Bắt đầu check tự động";
             }
         }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ButStartCallback();
+        }
 
         private void AutoTuneForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
             this.Hide();
+        }
+
+        private void AutoTuneForm_Load(object sender, EventArgs e)
+        {
+            txtUrl.Text = Properties.Settings.Default.Url;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (txtUrl.Text == string.Empty)
+            {
+                MessageBox.Show("Url is empty!");
+                return;
+            }
+            Properties.Settings.Default.Url = txtUrl.Text;
+            Properties.Settings.Default.Save();
+            MessageBox.Show("Save url success");
         }
     }
 }

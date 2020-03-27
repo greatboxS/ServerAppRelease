@@ -53,7 +53,7 @@ namespace EF_CONFIG.Exports
                 string FullFileName = $"{current_month_folder}\\{fileName}";
 
 
-                if(!files.Contains(FullFileName))
+                if (!files.Contains(FullFileName))
                 {
                     Create_ExcelFile(FullFileName, date);
                 }
@@ -469,7 +469,12 @@ namespace EF_CONFIG.Exports
                     };
 
                     if (item.Status == 0x00)
-                        submit_data.ECheckNotesId = item.Note;
+                    {
+                        var note = Data_Services.GetEcheckNote(area.id, item.Note);
+                        if (note != null)
+                            submit_data.ECheckNotesId = note.Id;
+                    }
+
 
                     if (!Data_Services.Update_ECheckDaily(submit_data))
                         Excp = $"Error when add item {item.Item} to database";
