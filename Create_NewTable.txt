@@ -1,0 +1,33 @@
+USE [DB_ECHECKING]
+GO
+
+/****** Object:  Table [dbo].[ECheckNoteExtension]    Script Date: 5/1/2020 3:47:53 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ECheckNoteExtension](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[ECheckingDailyId] [int] NULL,
+	[ECheckAreaId] [int] NULL,
+	[ECheckItemId] [int] NULL,
+	[ECheckNoteId] [int] NULL,
+	[ECheckPersonId] [int] NULL,
+	[NoteDetail] [nvarchar](max) NULL,
+	[NoteRemark] [nvarchar](max) NULL,
+	[CheckTime] [nvarchar](max) NULL,
+	[NoteReason] [nvarchar](max) NULL,
+	[Solution] [nvarchar](max) NULL,
+	[Resolved] [bit] NOT NULL,
+	[CheckTime_] [datetime] NULL,
+	[NoteProgress] [nvarchar](max) NULL,
+	[NoteHandledTime] [datetime] NULL,
+ CONSTRAINT [PK_dbo.ECheckNoteExtension] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
