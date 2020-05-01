@@ -102,7 +102,7 @@ namespace AutoTune
                 var current = AutoList.Where(i => i.UpdateHour == Time.Hour && i.UpdateMin == Time.Minute && !i.UpdateDone)
                     .FirstOrDefault();
 
-                if (current != null && current.UpdateHour != 0)
+                if (current != null)
                 {
                     CurrentCheck = current;
                     IsPosting = true;

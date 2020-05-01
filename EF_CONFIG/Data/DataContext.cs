@@ -20,6 +20,8 @@ namespace EF_CONFIG.Data
         public DbSet<CheckingPerson> CheckingPerson { get; set; }
         public DbSet<ECheckNotes> ECheckNotes { get; set; }
         public DbSet<ESubmit> ESubmit { get; set; }
+
+        public DbSet<ECheckNoteExtension> ECheckNoteExtension { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ECheckItem>()

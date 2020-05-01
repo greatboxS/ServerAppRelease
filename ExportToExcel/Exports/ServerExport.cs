@@ -425,6 +425,7 @@ namespace EF_CONFIG.Exports
         {
             string Excp = string.Empty;
             Data_Services Data_Services = new Data_Services(DataContext);
+            ECheckNoteExtension note_extension=null;
 
             try
             {
@@ -471,13 +472,37 @@ namespace EF_CONFIG.Exports
                     if (item.Status == 0x00)
                     {
                         var note = Data_Services.GetEcheckNote(area.id, item.Note);
-                        if (note != null)
+                        if (note != null) {
                             submit_data.ECheckNotesId = note.Id;
+
+                            note_extension = new ECheckNoteExtension
+                            {
+                                ECheckAreaId = area.id,
+                                ECheckItemId = CheckItem.id,
+                                ECheckPersonId = person.id,
+                                ECheckNoteId = note.Id,
+                                CheckTime = submit_data.TimeStr,
+                                CheckTime_ = submit_data.Time,
+                            };
+                        }
                     }
 
 
                     if (!Data_Services.Update_ECheckDaily(submit_data))
+                    {
                         Excp = $"Error when add item {item.Item} to database";
+                    }
+                    else
+                    {
+                        if (note_extension != null)
+                        {
+                            note_extension.ECheckingDailyId = submit_data.id;
+                            if(!Data_Services.Update_NoteExtension(note_extension))
+                            {
+                                Excp = $"Error when add note extension {note_extension.ECheckNoteId} to database";
+                            }
+                        }
+                    }
                 }
 
                 return Excp;
@@ -535,9 +560,9 @@ namespace EF_CONFIG.Exports
                     bool add_note = false;
                     for (int timeLine = 0; timeLine < 12; timeLine++)
                     {
-                        if (currentHour == 0 && timeLine == 0)
+                        if ((currentHour == 0 || currentHour == 1 ) && timeLine == 0)
                         {
-                            currentTime = 0;
+                            currentTime = 2;
                             if (!reset_note_text)
                             {
                                 currentSheet.Cells[ESubmit.ECheckingDailys.Count + 6, currentTime].Value = "";
@@ -547,17 +572,17 @@ namespace EF_CONFIG.Exports
                             reset_note_text = true;
                             if (ESubmit.ECheckingDailys[checkItem].Status == 0xFF)
                             {
-                                currentSheet.Cells[checkItem + 5, 1].Value = "X";
-                                currentSheet.Cells[checkItem + 5, 1].Style.Font.Bold = true;
+                                currentSheet.Cells[checkItem + 5, currentTime].Value = "X";
+                                currentSheet.Cells[checkItem + 5, currentTime].Style.Font.Bold = true;
 
-                                currentSheet.Cells[checkItem + 5, 2].Value = string.Empty;
+                                currentSheet.Cells[checkItem + 5, currentTime+1].Value = string.Empty;
                             }
                             else
                             {
-                                currentSheet.Cells[checkItem + 5, 1].Value = string.Empty;
+                                currentSheet.Cells[checkItem + 5, currentTime].Value = string.Empty;
 
-                                currentSheet.Cells[checkItem + 5, 2].Value = "X";
-                                currentSheet.Cells[checkItem + 5, 2].Style.Font.Bold = true;
+                                currentSheet.Cells[checkItem + 5, currentTime+1].Value = "X";
+                                currentSheet.Cells[checkItem + 5, currentTime+1].Style.Font.Bold = true;
                                 add_note = true;
 
                             }

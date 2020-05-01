@@ -96,6 +96,24 @@
     <Compile Include="AutoTuneForm.Designer.cs">
       <DependentUpon>AutoTuneForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlView\NoteDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ControlView\NoteDetailForm.Designer.cs">
+      <DependentUpon>NoteDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlView\NotOkLogs.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlView\NotOkLogs.Designer.cs">
+      <DependentUpon>NotOkLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ELogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ELogs.Designer.cs">
+      <DependentUpon>ELogs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +125,15 @@
     <Compile Include="UpdateQueue.cs" />
     <EmbeddedResource Include="AutoTuneForm.resx">
       <DependentUpon>AutoTuneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlView\NoteDetailForm.resx">
+      <DependentUpon>NoteDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlView\NotOkLogs.resx">
+      <DependentUpon>NotOkLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ELogs.resx">
+      <DependentUpon>ELogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -123,6 +150,8 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\EF_CONFIG.Models.CheckingPerson.datasource" />
+    <None Include="Properties\DataSources\EF_CONFIG.Models.ECheckArea.datasource" />
+    <None Include="Properties\DataSources\EF_CONFIG.Models.ECheckNoteExtension.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

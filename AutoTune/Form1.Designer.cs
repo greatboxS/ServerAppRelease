@@ -35,6 +35,7 @@
             this.createDatabaseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.createDatabaseToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.lbLastUpdate = new System.Windows.Forms.Label();
+            this.logsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +70,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.createDatabaseToolStripMenuItem});
+            this.createDatabaseToolStripMenuItem,
+            this.logsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(306, 24);
@@ -87,7 +89,7 @@
             // createDatabaseToolStripMenuItem1
             // 
             this.createDatabaseToolStripMenuItem1.Name = "createDatabaseToolStripMenuItem1";
-            this.createDatabaseToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
+            this.createDatabaseToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.createDatabaseToolStripMenuItem1.Text = "Create database";
             this.createDatabaseToolStripMenuItem1.Click += new System.EventHandler(this.createDatabaseToolStripMenuItem1_Click);
             // 
@@ -98,6 +100,13 @@
             this.lbLastUpdate.Size = new System.Drawing.Size(306, 21);
             this.lbLastUpdate.TabIndex = 5;
             this.lbLastUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // logsToolStripMenuItem
+            // 
+            this.logsToolStripMenuItem.Name = "logsToolStripMenuItem";
+            this.logsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.logsToolStripMenuItem.Text = "Logs";
+            this.logsToolStripMenuItem.Click += new System.EventHandler(this.logsToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -128,6 +137,7 @@
         private System.Windows.Forms.ToolStripMenuItem createDatabaseToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem createDatabaseToolStripMenuItem1;
         private System.Windows.Forms.Label lbLastUpdate;
+        private System.Windows.Forms.ToolStripMenuItem logsToolStripMenuItem;
     }
 }
 

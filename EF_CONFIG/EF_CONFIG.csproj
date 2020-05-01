@@ -79,6 +79,7 @@
     <Compile Include="Models\EChecking.cs" />
     <Compile Include="Models\ECheckItem.cs" />
     <Compile Include="Models\ECheckItemDef.cs" />
+    <Compile Include="Models\ECheckNoteExtension.cs" />
     <Compile Include="Models\ECheckNotes.cs" />
     <Compile Include="Models\ECheckSubmit.cs" />
     <Compile Include="Models\ECkeckingDaily.cs" />

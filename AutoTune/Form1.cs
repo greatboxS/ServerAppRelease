@@ -86,5 +86,11 @@ namespace AutoTune
             else
                 MessageBox.Show("Database already created");
         }
+
+        private void logsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ELogs logs = new ELogs();
+            logs.Show();
+        }
     }
 }

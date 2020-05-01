@@ -21,8 +21,8 @@ namespace AutoTune
         DataContext dataContext;
         Data_Services data_Services;
         CheckingPerson CheckingPerson;
-        Timer Timer = new Timer { Enabled = true, Interval = 1000 * 10 };
-        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 * 60 };
+        Timer Timer = new Timer { Enabled = true, Interval = 1000 * 2 };
+        Timer PostTimer = new Timer { Enabled = true, Interval = 1000 };
         int WaitingTime = 0;
         int MaxWaitingTime = 10;
         int MinWaitingTime = 5;
@@ -231,8 +231,15 @@ namespace AutoTune
                 if (cbxHis.SelectedItem != null)
                 {
                     var queue = His.Where(i => i.CheckDate == cbxHis.Text).FirstOrDefault();
-                    AutoCheck_Queue = queue;
-                    Update_DataGridView();
+                    if(queue!=null)
+                    {
+                        foreach (var item in queue.AutoList)
+                        {
+                            item.UpdateDone = false;
+                        }
+                        AutoCheck_Queue = queue;
+                        Update_DataGridView();
+                    }
                 }
             }
             catch { }
